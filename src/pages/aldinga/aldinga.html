@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <button ion-button full (click)="startVideo()">Start Video</button>
-  <button ion-button full (click)="startAudio()">Start Audio</button>
-  <button ion-button full (click)="stopAudio()" color="danger">Stop Audio</button>
+  <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto">
+    <source [src]="url" type="video/mp4" />
+</video>
 </ion-content>

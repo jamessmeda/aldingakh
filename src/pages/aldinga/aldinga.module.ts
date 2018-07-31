@@ -4,7 +4,7 @@ import { AldingaPage } from './aldinga';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { Platform } from 'ionic-angular';
 import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media';
-
+import videojs from 'video.js';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,22 @@ import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@i
 })
 export class AldingaPageModule {
   constructor(private streamingMedia: StreamingMedia) { }
+  public url: string = "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
+
+  initPlayer() {
+    try {
+        // setup the player via the unique element ID
+        var element = document.getElementById('videoPlayer');
+        if (element == null) {
+            throw "error loading blah";
+        }
+        // if we get here, all good!
+        videojs(element, {}, () => { });
+    }
+    catch (e) {
+    }
+}
+
   startVideo() {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Finished Video') },
