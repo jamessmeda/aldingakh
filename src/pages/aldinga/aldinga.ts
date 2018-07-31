@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
-import { urlToNavGroupStrings } from '../../../node_modules/ionic-angular/umd/navigation/url-serializer';
 /**
  * Generated class for the AldingaPage page.
  *
@@ -26,8 +25,9 @@ export class AldingaPage {
         zoom: 'no'
 
       }
-      this.videoUrl = "https://aldingakh.ddns.net/"
+      this.videoUrl = "https://aldingakh.ddns.net/Aldinga/index.php"
       const browser = this.inAppBrowser.create (this.videoUrl, '_blank',this.inAppBroserOps)
+      browser.show
     }
     catch(e){
       console.log(e);
