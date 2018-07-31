@@ -13,7 +13,7 @@ import { Platform } from 'ionic-angular';
   ],
 })
 export class AldingaPageModule {
-  constructor(private platform: Platform, private videoPlayer: VideoPlayer) { 
+  constructor(platform: Platform, private videoPlayer: VideoPlayer) { 
     platform.ready().then(() => {
 // Playing a video.
 this.videoPlayer.play('https://khfilterlist.ddns.net/VideoStream/ALD_KH_VOD/aldinga.m3u8').then(() => {
