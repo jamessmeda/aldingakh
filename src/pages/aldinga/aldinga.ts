@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { VideoOptions, VideoPlayer} from '@ionic-native/video-player';
 /**
  * Generated class for the AldingaPage page.
  *
@@ -14,10 +14,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'aldinga.html',
 })
 export class AldingaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  videoOptions: VideoOptions;
+  videoUrl: string;
+  constructor(public videoPlayer: VideoPlayer, public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  async playVideo()
+  {
+    try {
+       this.videoOptions = {
+         volume: 0.7
+       }
+       this.videoUrl = "https://aldingakh.ddns.net/Seaford/Live/seaford.m3u8";
+       this.videoPlayer.play(this.videoUrl, this.videoOptions)
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AldingaPage');
   }

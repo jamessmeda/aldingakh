@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { MyApp } from './app.component';
-import { StreamingMedia } from '@ionic-native/streaming-media';
 
 import { AldingaPage } from '../pages/aldinga/aldinga';
 import { SeafordPage } from '../pages/seaford/seaford';
@@ -41,7 +40,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     VideoPlayer,
-    StreamingMedia,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
