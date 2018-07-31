@@ -1,0 +1,8 @@
+{
+  "name": "aldingakh",
+  "app_id": "350f5f0c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
