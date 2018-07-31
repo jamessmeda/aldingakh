@@ -24,7 +24,7 @@ export class AldingaPageModule {
     };
  
     // http://www.sample-videos.com/
-    this.streamingMedia.playVideo('https://aldingakh.ddns.net/Seaford/Live/seaford.m3u8', options);
+    this.streamingMedia.playVideo('https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4', options);
   }
  
   startAudio() {
