@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VideoOptions, VideoPlayer} from '@ionic-native/video-player';
+import { InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
+import { urlToNavGroupStrings } from '../../../node_modules/ionic-angular/umd/navigation/url-serializer';
 /**
  * Generated class for the AldingaPage page.
  *
@@ -14,18 +15,19 @@ import { VideoOptions, VideoPlayer} from '@ionic-native/video-player';
   templateUrl: 'aldinga.html',
 })
 export class AldingaPage {
-  videoOptions: VideoOptions;
   videoUrl: string;
-  constructor(public videoPlayer: VideoPlayer, public navCtrl: NavController, public navParams: NavParams) {
+  inAppBroserOps: InAppBrowserOptions;
+  constructor(public inAppBrowser: InAppBrowser, public navCtrl: NavController, public navParams: NavParams) {
   }
   async playVideo()
   {
     try {
-       this.videoOptions = {
-         volume: 0.7
-       }
-       this.videoUrl = "https://aldingakh.ddns.net/Seaford/Live/seaford.m3u8";
-       this.videoPlayer.play(this.videoUrl, this.videoOptions)
+      this.inAppBroserOps = {
+        zoom: 'no'
+
+      }
+      this.videoUrl = "https://aldingakh.ddns.net/"
+      const browser = this.inAppBrowser.create (this.videoUrl, '_blank',this.inAppBroserOps)
     }
     catch(e){
       console.log(e);
